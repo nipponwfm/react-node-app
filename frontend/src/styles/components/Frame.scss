@@ -1,0 +1,25 @@
+#frame-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    .frame {
+        position: relative;
+        .table {
+            background-color: pink;
+            width: 200px;
+            height: 400px;
+            font-size: 3.2rem;
+            margin: 10px;
+            text-align: center;
+        }
+        .choose {
+            position: absolute;
+            font-size: 2.0rem;
+            bottom: -40px;
+            right: 10px;
+            width: 200px;
+        }
+    }    
+}
+

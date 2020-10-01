@@ -1,0 +1,9 @@
+@import './base/base';
+@import './components/Frame.scss';
+
+h1 {
+    font-size: 3rem;
+    position: fixed;
+    top: 50px;
+    left: 300px;
+}
