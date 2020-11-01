@@ -13,7 +13,7 @@ app.get('/getshipoption', cors(), async (req,res) => {
     res.sendFile(path.join(__dirname, './data.json'))
 })
 
-const publicPath = path.join(__dirname, '../../frontend/public')
+const publicPath = path.join(__dirname, '../public')
 app.use(express.static(publicPath))
 
 app.get('*', async (req, res) => {

@@ -3,7 +3,6 @@ const cheerio = require('cheerio')
 const fs = require('fs')
 const path = require('path')
 const { initialValue, props } = require('./initialValue')
-const { ID_CONTAINER } = require('./getID')
 
 const checkDataJSON = () => {
     if (fs.existsSync(path.join(__dirname, '../data.json'))) return true
@@ -21,6 +20,10 @@ const fetchShipInfo = async () => {
 
         await rp(options)
             .then(($) => {
+                let ID_CONTAINER = []
+                $('.mw-parser-output .tabber').each((i, elem) => {
+                    ID_CONTAINER.push($(elem).attr('id'))
+                })
                 ID_CONTAINER.forEach((CATEGORY_ID) => {
                     let LIST_ID = []
                     $(`${CATEGORY_ID} div[title='Level 120'] tbody tr`).each((i, elem) => {
